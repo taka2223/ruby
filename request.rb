@@ -28,18 +28,7 @@ class LinkCrawler
         end
         response
       end
-    
-    def error(row,error)
-        CSV.open(RESULTS_FILE,"a+") do |csv|
-            csv<<[row,'error']
-        end
-    end
     def debug(message)
         puts message
     end
 end
-
-a = LinkCrawler.new("https://bangumi.tv/anime/browser?sort=rank") 
-
-b = Processor.new(a.visit_web,"https://bangumi.tv/anime/browser?sort=rank")
-b.relevant_html
