@@ -21,8 +21,10 @@ class Processor
         relevant_html
         CSV.open("rating.csv","a+") do |csv|
             @body.each do |inner|
-                puts inner.css('a').text+' '+inner.css('small.fade').text
-                csv<<[inner.css('a').text.encode('utf-8'),inner.css('small.fade').text.encode('utf-8'),inner.css('span.tip_j').text.encode('utf-8')]
+               puts name =inner.css('a').text.encode('utf-8')
+               puts rate =inner.css('small.fade').text.encode('utf-8')
+               puts num  =inner.css('span.tip_j').text.encode('utf-8')
+            csv<<[name,rate,num]
             end
         end
     end
