@@ -4,12 +4,11 @@ require 'active_support/core_ext'
 require 'csv'
 
 class Processor
-    attr_accessor :status, :keywords, :body
+    attr_accessor :status, :body
 
     def initialize(html,url)
         @html = html
         @url_address =url
-        @keywords  = []
         parse_status
     end
 

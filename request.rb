@@ -13,7 +13,7 @@ class LinkCrawler
 
     def visit_web
         attempt = 1
-        debug("#{@url}:visiting #{attempt} time ") if attempt == NUM_ATTEMPTS 
+        debug("#{@url}:visiting #{attempt} time ") if attempt == NUM_ATTEMPTS
         html = get_response(@url)
     end
 
